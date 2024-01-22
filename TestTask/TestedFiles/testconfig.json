@@ -1,0 +1,13 @@
+{
+    "name":"Anna",
+    "surname":"Parker",
+    "age":24,
+    "job":{
+        "position":"accountant",
+        "experience":5
+    },
+    "phones":{
+        "mobile":"800-123-4567",
+        "home":"877-123-1234"
+    }
+}
