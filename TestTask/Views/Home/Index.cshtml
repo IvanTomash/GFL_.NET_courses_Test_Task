@@ -1,0 +1,60 @@
+﻿@model TestTask.ViewModels.UsersViewModel;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Index">
+        <div class="mb-2">
+            <input type="file" name="file" class="form-control" />
+        </div>
+        <div class="mb-2">
+            <input type="submit" value="Upload file" class=" btn btn-primary"/>
+        </div>
+        <span class="text-success">
+            @ViewBag.Message
+        </span>
+    </form>
+    @if(Model != null)
+    {
+        foreach(var item in Model.Users)
+        {
+            <h2>
+                @item.Id
+            </h2>
+            <ul>
+                <li>
+                    Name: @item.Name
+                </li>
+                <li>
+                    Surname: @item.Surname
+                </li>
+                <li>
+                    Age: @item.Age
+                </li>
+                <li>
+                    Job
+                </li>
+                <ul>
+                    <li>
+                        Position: @item.Job.Position
+                    </li>
+                    <li>
+                        Experience: @item.Job.Experience
+                    </li>
+                </ul>
+                <li>
+                    Phones
+                </li>
+                <ul>
+                    <li>
+                        Mobile: @item.Phones.Mobile
+                    </li>
+                    <li>
+                        Home: @item.Phones.Home
+                    </li>
+                </ul>
+            </ul>
+        }
+    }
+</div>
